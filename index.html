@@ -33,7 +33,32 @@
     
     <br/>
     <div class="container">
-      <div id="map" class="map"></div>
+      <div id="map-container" style="flex: 2;">
+        <p style="text-align: right;">
+          Filter: 
+          <span>
+            <img src="assets/poop.png" alt="Legend" width="30px" height="30px"> 1 Star
+          </span>
+          <input type="checkbox" id="1-star-filter" checked="true">,
+          <span>
+            <img src="assets/thumbs-down.png" alt="Legend" width="30px" height="30px"> 2 Star
+          </span>
+          <input type="checkbox" id="2-star-filter" checked="true">,
+          <span>
+            <img src="assets/neutral.png" alt="Legend" width="30px" height="30px"> 3 Star
+          </span>
+          <input type="checkbox" id="3-star-filter" checked="true">,
+          <span>
+            <img src="assets/thumbs-up.png" alt="Legend" width="30px" height="30px"> 4 Star
+          </span>
+          <input type="checkbox" id="4-star-filter" checked="true">,
+          <span>
+            <img src="assets/star.png" alt="Legend" width="30px" height="30px"> 5 Star
+          </span>
+          <input type="checkbox" id="5-star-filter" checked="true">
+        </p>
+        <div id="map" class="map"></div>
+      </div>
 
       <div class="card">
         <header class="card-header">
@@ -75,24 +100,6 @@
 
 
     </div>
-
-    <p>
-      <span>
-        <img src="assets/poop.png" alt="Legend" width="30px" height="30px"> 1 Star
-      </span>,
-      <span>
-        <img src="assets/thumbs-down.png" alt="Legend" width="30px" height="30px"> 2 Star
-      </span>,
-      <span>
-        <img src="assets/neutral.png" alt="Legend" width="30px" height="30px"> 3 Star
-      </span>,
-      <span>
-        <img src="assets/thumbs-up.png" alt="Legend" width="30px" height="30px"> 4 Star
-      </span>,
-      <span>
-        <img src="assets/star.png" alt="Legend" width="30px" height="30px"> 5 Star
-      </span>
-    </p>
 
 
   </main>
