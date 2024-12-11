@@ -132,3 +132,11 @@ a:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+input[type='checkbox'] {
+  width:15px;
+  height:15px;
+}
+input[type='checkbox']:checked {
+  background-color: black;
+}
