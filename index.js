@@ -11,6 +11,57 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// register on change for rating filter
+document.getElementById('1-star-filter').addEventListener('change', function() {
+  toggleMarkers(1);
+});
+document.getElementById('2-star-filter').addEventListener('change', function() {
+  toggleMarkers(2);
+});
+document.getElementById('3-star-filter').addEventListener('change', function() {
+  toggleMarkers(3);
+});
+document.getElementById('4-star-filter').addEventListener('change', function() {
+  toggleMarkers(4);
+});
+document.getElementById('5-star-filter').addEventListener('change', function() {
+  toggleMarkers(5);
+});
+
+function toggleMarkers(rating) {
+  switch (rating) {
+    case 1:
+      targetMarker = poopIcon;
+      break;
+    case 2:
+      targetMarker = thumbsDownIcon;
+      break;
+    case 3:
+      targetMarker = neutralIcon;
+      break;
+    case 4:
+      targetMarker = thumbsUpIcon;
+      break;
+    case 5:
+      targetMarker = starIcon;
+      break;
+    default:
+  }
+
+  map.eachLayer(function(layer) {
+    if (layer instanceof L.Marker) {
+      if (layer.options.icon && layer.options.icon.options.iconUrl === targetMarker.options.iconUrl) {
+        // toggle visibility
+        if (layer.options.opacity === 0) {
+          layer.setOpacity(1);
+        } else {
+          layer.setOpacity(0);
+        }
+      }
+    }
+  });
+}
+
 async function fetchData(url) {
   try {
       const response = await fetch(url);
