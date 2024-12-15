@@ -1,0 +1,46 @@
+/* Colour Palette 
+#6200ea
+#d1e6f1
+#2580a0
+*/
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .content {
+      max-width: 600px;
+      margin: 0 auto;
+  }
+}
+
+/* Search bar overlay */
+.search-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
