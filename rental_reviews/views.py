@@ -3,10 +3,49 @@ from django import forms
 from rental_reviews.models import Review, Address
 
 from django.http import HttpResponse
+from django.http import JsonResponse
 
+def rental_data(request):
+  addresses = Address.objects.all()
+  reviews = Review.objects.all()
+
+  rental_data = []
+  for address in addresses:
+    address_reviews = reviews.filter(address=address)
+    rental_data.append({
+      "address": address.street,
+      "suburb": address.suburb,
+      "state": address.state,
+      "country": address.country,
+      "lat": address.lat,
+      "lon": address.lon,
+      "reviews": list(address_reviews.values())
+    })
+  
+  return JsonResponse(rental_data, safe=False)
 
 def index(request):
-  return render(request, "rental_reviews/index.html")
+  addresses = Address.objects.all()
+  reviews = Review.objects.all()
+
+  rental_data = []
+  for address in addresses:
+    address_reviews = reviews.filter(address=address)
+    rental_data.append({
+      "address": address.street,
+      "suburb": address.suburb,
+      "state": address.state,
+      "country": address.country,
+      "lat": address.lat,
+      "lon": address.lon,
+      "reviews": address_reviews
+    })
+  
+  context = {
+    "rental_data": rental_data
+  }
+
+  return render(request, "rental_reviews/index.html", context)
 
 def add_review(request):
   return render(request, "rental_reviews/add-review.html", {

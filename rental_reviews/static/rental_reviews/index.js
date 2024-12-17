@@ -95,14 +95,14 @@ function showCard() {
 
   const stars = document.querySelectorAll(".rating span");
   stars.forEach((star, index) => {
-    if (index < state.clickedRental.rating) {
+    if (index < state.clickedRental.reviews[0].rating) {
       star.style.display = "inline"; // Highlight filled stars
     } else {
       star.style.display = "none"; // Dim unfilled stars
     }
   });
 
-  fields[4].querySelector('textarea').textContent = state.clickedRental.review;
+  fields[4].querySelector('textarea').textContent = state.clickedRental.reviews[0].review;
 }
 
 function hideCard() {
@@ -111,12 +111,12 @@ function hideCard() {
 
 
 (async () => {
-  const url = STATIC_URL + "rentals-data.json";
+  const url = "rental_data.json";
   const rentals = await fetchData(url); // Awaits the resolution before proceeding
 
   rentals.forEach(rental => {
     let icon;
-    switch (rental.rating) {
+    switch (rental.reviews[0].rating) {
       case 1:
         icon = poopIcon;
         break;
