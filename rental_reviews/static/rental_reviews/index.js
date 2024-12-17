@@ -1,9 +1,25 @@
+
+const state = new Proxy(
+  {clickedRental: null},
+  {
+    set(target, key, value) {
+      if (key === "clickedRental" && target[key] !== value && value !== null) {
+        target[key] = value;
+        showCard();
+      } else {
+        hideCard();
+      }
+      return true; // Return success
+    },
+  }
+);
+
+
 var map = L.map('map').setView([-37.8124, 144.9623], 11);
 
 map.on('click', function() {
   console.log("Map clicked");
-  clickedRental = {"address":"-", "suburb":"", "state":"", "rating":0, "review":""};
-  updateDOM();
+  state.clickedRental = null;
 });
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -67,28 +83,32 @@ var starIcon = L.icon({
   popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-function updateDOM() {
+function showCard() {
+  document.querySelector('.card').style.display = 'block';
   document.querySelectorAll('.property-title h2').forEach(el => {
-      el.textContent = clickedRental.address;
+      el.textContent = state.clickedRental.address;
   });
 
   fields = document.querySelectorAll('.card-body .field');
-  fields[0].querySelector('input').value = clickedRental.suburb;
-  fields[1].querySelector('span').textContent = clickedRental.state;
+  fields[0].querySelector('input').value = state.clickedRental.suburb;
+  fields[1].querySelector('span').textContent = state.clickedRental.state;
 
   const stars = document.querySelectorAll(".rating span");
   stars.forEach((star, index) => {
-    if (index < clickedRental.rating) {
+    if (index < state.clickedRental.rating) {
       star.style.display = "inline"; // Highlight filled stars
     } else {
       star.style.display = "none"; // Dim unfilled stars
     }
   });
 
-  fields[4].querySelector('textarea').textContent = clickedRental.review;
+  fields[4].querySelector('textarea').textContent = state.clickedRental.review;
 }
 
-var clickedRental = null;
+function hideCard() {
+  document.querySelector('.card').style.display = 'none';
+}
+
 
 (async () => {
   const url = STATIC_URL + "rentals-data.json";
@@ -119,9 +139,13 @@ var clickedRental = null;
     marker.bindPopup(rental.address);
 
     marker.on('click', () => {
+      console.log("map center", map.getCenter());
+      console.log("marker center", marker.getLatLng());
+
+      map.setView([rental.lat, rental.lon]);
       marker.openPopup();
-      clickedRental = rental;
-      updateDOM();
+      state.clickedRental = rental;
+      showCard();
     });
 
   });
@@ -169,3 +193,10 @@ async function searchSuburb() {
   }
 }
 
+
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastLiveExample) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastBootstrap.show();
+}

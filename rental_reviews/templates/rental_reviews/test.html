@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button with Hover Effect</title>
+    <style>
+        /* General reset for margin and padding */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Top navigation bar styling */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        /* Button styling */
+        .top-nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Remove focus outline */
+        .top-nav button:focus {
+            outline: none;
+        }
+
+        /* Hover effect */
+        .top-nav button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <button>Hover Me</button>
+    </div>
+</body>
+</html>

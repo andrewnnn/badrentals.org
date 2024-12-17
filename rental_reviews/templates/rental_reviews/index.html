@@ -27,7 +27,8 @@
 </head>
 <body>
   <header>
-    <h1>BadRentals.com.au</h1>
+    <div style="width: 80vw;"><button class="main-btn">BadRentals.com.au</button></div>
+    <div style="width: 20vw;"><a href="{% url 'add_review' %}"><button class="add-review-btn" >Add Review</button></div></a>
     <!-- <p style="font-style: italic;color: black;">Showcasing the shocking experiences of tenants around Australia</p> -->
   </header>
   <main>
@@ -41,7 +42,7 @@
     <br/>
     <div class="container">
       <div id="map-container" style="flex: 2;">
-        <p style="text-align: right;">
+        <p style="text-align: right; display: none;">
           Filter: 
           <span>
             <img src="{% static 'rental_reviews/assets/poop.png' %}" alt="Legend" width="30px" height="30px"> 1 Star
@@ -67,7 +68,7 @@
         <div id="map" class="map"></div>
       </div>
 
-      <div class="card">
+      <div class="card" style="display: none;">
         <header class="card-header">
           <div class="property-title">
             <h2 style="margin: 0;">-</h2>
@@ -107,6 +108,21 @@
 
 
     </div>
+    {% if toast %}
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bad Rentals</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            {{ toast}}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
 
     <p>
       <span>

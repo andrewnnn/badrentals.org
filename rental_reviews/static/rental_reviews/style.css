@@ -8,8 +8,8 @@ body {
 header {
   background: #6200ea;
   color: #fff;
-  padding: 1rem 2rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 main {
   padding: 2rem;
@@ -131,4 +131,33 @@ a:hover {
   background-color: #f4f4f9;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+input[type='checkbox'] {
+  width:15px;
+  height:15px;
+}
+
+input[type='checkbox']:checked {
+  background-color: black;
+}
+
+
+header button {
+  background-color: #6200ea;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-review-btn:hover {
+  background-color: grey;
+}
+
+.main-btn {
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 1rem;
 }
