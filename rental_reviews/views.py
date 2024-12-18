@@ -48,7 +48,7 @@ def index(request):
         "rental_data": rental_data
     }
 
-    return render(request, "rental_reviews/index.html", context)
+    return render(request, "base_cover.html", context)
 
 def add_review(request):
     return render(request, "rental_reviews/add-review.html", {
