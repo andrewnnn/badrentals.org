@@ -27,28 +27,11 @@ def rental_data(request):
     
     return JsonResponse(rental_data, safe=False)
 
+def home(request):
+    return render(request, "rental_reviews/home.html")
+
 def index(request):
-    addresses = Address.objects.all()
-    reviews = Review.objects.all()
-
-    rental_data = []
-    for address in addresses:
-        address_reviews = reviews.filter(address=address)
-        rental_data.append({
-            "address": address.street,
-            "suburb": address.suburb,
-            "state": address.state,
-            "country": address.country,
-            "lat": address.lat,
-            "lon": address.lon,
-            "reviews": address_reviews
-        })
-    
-    context = {
-        "rental_data": rental_data
-    }
-
-    return render(request, "base_cover.html", context)
+    return render(request, "base_cover.html")
 
 def add_review(request):
     return render(request, "rental_reviews/add-review.html", {
