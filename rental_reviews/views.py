@@ -31,7 +31,7 @@ def home(request):
     return render(request, "rental_reviews/home.html")
 
 def index(request):
-    return render(request, "base_cover.html")
+    return render(request, "rental_reviews/index.html")
 
 def add_review(request):
     return render(request, "rental_reviews/add-review.html", {

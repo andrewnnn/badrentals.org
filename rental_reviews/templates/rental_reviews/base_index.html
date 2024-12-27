@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <title>Bad Rentals</title>
+  </head>
+  <body>
+    {% include 'rental_reviews/nav.html' %}
+    
+
+
+    <main class="container">
+      {% block content %}
+        <h1>Hello world!</h1>
+      {% endblock %}
+    </main>
+
+    <footer class="container">
+      <p>&copy; 2024 Bad Rentals</p>
+      <p> Rental data provided by <a href="https://www.shitrentals.org">www.shitrentals.org</a>, go there to see the full dataset </p>
+    </footer>
+
+  </body>
+</html>
