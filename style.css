@@ -8,17 +8,18 @@ body {
 header {
   background: #6200ea;
   color: #fff;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   text-align: center;
 }
 main {
-  padding: 2rem;
+  padding: 1rem;
 }
+
 footer {
   background: lightgray;
   color: #6200ea;
   text-align: center;
-  padding: 1rem;
+  /* padding: 1rem; */
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -61,11 +62,17 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  height: 60vh;
+  height: 59vh;
 }
 
+/* .map-container {
+  flex: 2;
+  height: inherit;
+  align-items: stretch;
+} */
+
 .map {
-  height: 60vh;
+  height: inherit;
   flex: 2;
 }
 
@@ -76,7 +83,7 @@ a:hover {
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: inherit;
 }
 
 .card-header {
@@ -139,4 +146,8 @@ input[type='checkbox'] {
 }
 input[type='checkbox']:checked {
   background-color: black;
+}
+
+#results p {
+  margin: 0.75rem;
 }
