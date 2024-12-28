@@ -20,46 +20,42 @@
 </head>
 <body>
   <header>
-    <h1>BadRentals.com.au</h1>
+    <h1 style="margin: 0; padding: 1.5rem;">BadRentals.com.au</h1>
     <!-- <p style="font-style: italic;color: black;">Showcasing the shocking experiences of tenants around Australia</p> -->
   </header>
   <main>
-    <h3 style="text-align: center; margin-top: 0; margin-bottom: 25px; font-weight:600;">Explore the shocking experiences of tenants around Australia</h3>
+    <h3 style="text-align: center; margin-top: 0; margin-bottom: 1rem; font-weight:600;">Explore the shocking experiences of tenants around Australia</h3>
     <div class="search-container">
       <input type="text" id="suburbInput" placeholder="Suburb" />
       <button onclick="searchSuburb()">Search</button>
       <div id="results"></div>
     </div>
-    
-    <br/>
-    <div class="container">
-      <div id="map-container" style="flex: 2;">
-        <p style="text-align: right;">
-          Filter: 
-          <span>
-            <img src="assets/poop.png" alt="Legend" width="30px" height="30px"> 1 Star
-          </span>
-          <input type="checkbox" id="1-star-filter" checked="true">,
-          <span>
-            <img src="assets/thumbs-down.png" alt="Legend" width="30px" height="30px"> 2 Star
-          </span>
-          <input type="checkbox" id="2-star-filter" checked="true">,
-          <span>
-            <img src="assets/neutral.png" alt="Legend" width="30px" height="30px"> 3 Star
-          </span>
-          <input type="checkbox" id="3-star-filter" checked="true">,
-          <span>
-            <img src="assets/thumbs-up.png" alt="Legend" width="30px" height="30px"> 4 Star
-          </span>
-          <input type="checkbox" id="4-star-filter" checked="true">,
-          <span>
-            <img src="assets/star.png" alt="Legend" width="30px" height="30px"> 5 Star
-          </span>
-          <input type="checkbox" id="5-star-filter" checked="true">
-        </p>
-        <div id="map" class="map"></div>
-      </div>
+    <p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0;">
+      Filter: 
+      <span>
+        <img src="assets/poop.png" alt="Legend" width="30px" height="30px"> 1 Star
+      </span>
+      <input type="checkbox" id="1-star-filter" checked="true">,
+      <span>
+        <img src="assets/thumbs-down.png" alt="Legend" width="30px" height="30px"> 2 Star
+      </span>
+      <input type="checkbox" id="2-star-filter" checked="true">,
+      <span>
+        <img src="assets/neutral.png" alt="Legend" width="30px" height="30px"> 3 Star
+      </span>
+      <input type="checkbox" id="3-star-filter" checked="true">,
+      <span>
+        <img src="assets/thumbs-up.png" alt="Legend" width="30px" height="30px"> 4 Star
+      </span>
+      <input type="checkbox" id="4-star-filter" checked="true">,
+      <span>
+        <img src="assets/star.png" alt="Legend" width="30px" height="30px"> 5 Star
+      </span>
+      <input type="checkbox" id="5-star-filter" checked="true">
+    </p>
 
+    <div class="container">
+      <div id="map" class="map"></div>
       <div class="card">
         <header class="card-header">
           <div class="property-title">
@@ -96,17 +92,13 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
-
 
   </main>
   <footer>
     <p>&copy; 2024 Bad Rentals</p>
     <p> Rental data provided by <a style="color: blue;" href="https://www.shitrentals.org">www.shitrentals.org</a>, go there to see the full dataset </p>
-    <a style="color: blue;" href="https://www.flaticon.com/free-icons/poop" title="poop icons">Icons created by Mihimihi - Flaticon</a>
+    <p><a style="color: blue;" href="https://www.flaticon.com/free-icons/poop" title="poop icons">Icons created by Mihimihi - Flaticon</a></p>
   </footer>
 </body>
 <script src="index.js"></script>
