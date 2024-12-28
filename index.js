@@ -1,5 +1,3 @@
-document.getElementById("website-banner").innerHTML = window.location.href;
-
 var map = L.map('map').setView([-37.8124, 144.9623], 11);
 
 map.on('click', function() {
