@@ -80,40 +80,40 @@ var poopIcon = L.icon({
   iconUrl: 'assets/poop.png',
 
   iconSize:     [38, 38], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 var thumbsDownIcon = L.icon({
   iconUrl: 'assets/thumbs-down.png',
 
   iconSize:     [38, 38], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 var neutralIcon = L.icon({
   iconUrl: 'assets/neutral.png',
 
   iconSize:     [38, 38], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 var thumbsUpIcon = L.icon({
   iconUrl: 'assets/thumbs-up.png',
 
   iconSize:     [38, 38], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 var starIcon = L.icon({
   iconUrl: 'assets/star.png',
 
   iconSize:     [38, 38], // size of the icon
-  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
 function updateDOM() {
