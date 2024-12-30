@@ -1,0 +1,9 @@
+:root {
+  --background-color: #6200ea;
+}
+
+.nav {
+  background-color: var(--background-color);
+  text-align: center;
+  color: white !important;
+}
