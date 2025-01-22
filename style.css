@@ -1,29 +1,49 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 header {
   background: #6200ea;
   color: #fff;
-  /* padding: 1rem 2rem; */
   text-align: center;
 }
-main {
-  padding: 1rem;
+
+#map-container {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 footer {
   background: lightgray;
   color: #6200ea;
   text-align: center;
-  /* padding: 1rem; */
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 0.5rem;
 }
+
 a {
   color: #6200ea;
   text-decoration: none;
@@ -35,6 +55,7 @@ a:hover {
 .search-container {
   /* Center horizontally*/
   text-align: center;
+  padding-bottom: 0.5rem;
 }
 .search-container input[type="text"] {
   width: 30%;
@@ -55,25 +76,6 @@ a:hover {
 }
 .search-container button:hover {
   background-color: #3700b3;
-}
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  height: 59vh;
-}
-
-/* .map-container {
-  flex: 2;
-  height: inherit;
-  align-items: stretch;
-} */
-
-.map {
-  height: inherit;
-  flex: 2;
 }
 
 .card {
