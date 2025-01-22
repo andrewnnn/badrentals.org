@@ -24,39 +24,26 @@ header {
 }
 
 #map-container {
-  flex: 1;
   width: 100%;
+  flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #map {
-  position: absolute;
+  flex: 1;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
-footer {
-  background: lightgray;
-  color: #6200ea;
+.search-container {
   text-align: center;
   padding: 0.5rem;
 }
 
-a {
-  color: #6200ea;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.search-container {
-  /* Center horizontally*/
-  text-align: center;
-  padding-bottom: 0.5rem;
-}
 .search-container input[type="text"] {
   width: 30%;
   padding: 0.5rem;
@@ -76,6 +63,21 @@ a:hover {
 }
 .search-container button:hover {
   background-color: #3700b3;
+}
+
+footer {
+  background: lightgray;
+  color: #6200ea;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+a {
+  color: #6200ea;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .card {
