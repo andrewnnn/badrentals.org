@@ -141,28 +141,41 @@ function populateMap() {
     const url = "./rentals-data.json";
     const rentals = await fetchData(url); // Awaits the resolution before proceeding
   
+    // Create a layer group to hold markers
+    const poopGrp = L.layerGroup().addTo(map);
+    const thumbsDownGrp = L.layerGroup().addTo(map);
+    const neutralGrp = L.layerGroup().addTo(map);
+    const thumbsUpGrp = L.layerGroup().addTo(map);
+    const starGrp = L.layerGroup().addTo(map);
+
     rentals.forEach(rental => {
-      let icon;
+      let icon, group;
       switch (rental.rating) {
         case 1:
           icon = poopIcon;
+          group = poopGrp;
           break;
         case 2:
           icon = thumbsDownIcon;
+          group = thumbsDownGrp;
           break;
         case 3:
           icon = neutralIcon;
+          group = neutralGrp;
           break;
         case 4:
           icon = thumbsUpIcon;
+          group = thumbsUpGrp;
           break;
         case 5:
           icon = starIcon;
+          group = starGrp;
           break;
         default:
           icon = neutralIcon;
+          group = neutralGrp;
       }
-      const marker = L.marker([rental.lat, rental.lon], {icon: icon}).addTo(map);
+      const marker = L.marker([rental.lat, rental.lon], {icon: icon});
       marker.bindPopup(rental.address);
   
       marker.on('click', () => {
@@ -170,8 +183,16 @@ function populateMap() {
         clickedRental = rental;
         updateDOM();
       });
-  
+
+      group.addLayer(marker);
     });
+
+    var layerControl = L.control.layers().addTo(map);
+    layerControl.addOverlay(poopGrp, "poop-1");
+    layerControl.addOverlay(thumbsDownGrp, "thumbs down-2");
+    layerControl.addOverlay(neutralGrp, "neutral-3");
+    layerControl.addOverlay(thumbsUpGrp, "thumbs up-4");
+    layerControl.addOverlay(starGrp, "star-5");
   
   })();
 }
