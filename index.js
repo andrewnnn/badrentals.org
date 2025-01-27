@@ -176,12 +176,10 @@ function populateMap() {
           group = neutralGrp;
       }
       const marker = L.marker([rental.lat, rental.lon], {icon: icon});
-      marker.bindPopup(rental.address);
   
       marker.on('click', () => {
-        marker.openPopup();
         clickedRental = rental;
-        updateDOM();
+        openPopup();
       });
 
       group.addLayer(marker);
@@ -244,3 +242,31 @@ async function searchSuburb() {
 var map = initMap();
 // registerFilters();
 populateMap();
+
+const popupOverlay = document.querySelector('.popup-overlay');
+const closeButton = document.querySelector('.close-button');
+
+function openPopup() {
+    popupOverlay.classList.add('active');
+}
+
+function closePopup() {
+    popupOverlay.classList.remove('active');
+}
+
+// Event listeners
+closeButton.addEventListener('click', closePopup);
+
+// Close popup when clicking outside the card
+popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) {
+        closePopup();
+    }
+});
+
+// Close popup when pressing Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closePopup();
+    }
+});
