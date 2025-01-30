@@ -180,6 +180,7 @@ function populateMap() {
       marker.on('click', () => {
         clickedRental = rental;
         openPopup();
+        updateDOM();
       });
 
       group.addLayer(marker);

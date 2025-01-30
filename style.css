@@ -171,7 +171,6 @@ input[type='checkbox']:checked {
 
 .popup-card {
   background-color: white;
-  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
@@ -193,13 +192,13 @@ input[type='checkbox']:checked {
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.5rem;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 2rem;
   cursor: pointer;
-  color: #666;
+  color: #e8e8e8;
 }
 
 .close-button:hover {
