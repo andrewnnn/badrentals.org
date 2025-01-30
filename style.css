@@ -133,7 +133,7 @@ a:hover {
 }
 
 .field .rating span {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #ffb400;
 }
 
@@ -198,7 +198,8 @@ input[type='checkbox']:checked {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #e8e8e8;
+  color: white; /* Changed color to ensure visibility */
+  z-index: 2; /* Added z-index to ensure it is above other elements */
 }
 
 .close-button:hover {

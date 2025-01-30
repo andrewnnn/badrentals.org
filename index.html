@@ -8,7 +8,7 @@
   <link rel="manifest" href="assets/favicon_io/site.webmanifest">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
-
+  
   <title>Bad Rentals</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -23,7 +23,7 @@
   <header>
     <h1 style="margin: 0; padding: 1rem;">BadRentals</h1>
   </header>
-
+  
   <main id="map-container">
     <!-- SEARCH  -->
     <div class="search-container">
@@ -31,7 +31,7 @@
       <button onclick="searchSuburb()">Search</button>
       <div id="results"></div>
     </div>
-
+    
     <!-- FILTER -->
     <!-- <p style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
       Filter: 
@@ -56,61 +56,61 @@
       </span>
       <input type="checkbox" id="5-star-filter" checked="true">
     </p> -->
-
+    
     <div id="map"></div>
-
+    
     <div class="popup-overlay">
       <div class="popup-card">
-          <button class="close-button">×</button>
-          <header class="card-header">
-            <div class="property-title">
-              <h2 style="margin: 0;">-</h2>
-            </div>
-          </header>
-          <div class="card-body">
-            <div class="field">
-              <label>Suburb</label>
-              <input type="text" value="" disabled>
-            </div>
-            <div class="field">
-              <label>State/City</label>
-              <span class="chip"></span>
-            </div>
-            <div class="field">
-              <label>Rating</label>
-              <div class="rating">
-                <span style="display:none">⭐</span>
-                <span style="display:none">⭐</span>
-                <span style="display:none">⭐</span>
-                <span style="display:none">⭐</span>
-                <span style="display:none">⭐</span>
-              </div>
-            </div>
-            <div class="field">
-              <label>Images</label>
-              <div class="attachments">No attachments</div>
-            </div>
-            <div class="field">
-              <label>Review</label>
-              <textarea readonly rows="8">
-              </textarea>
-            </div>
-          </div>
+      <button class="close-button">×</button>
+      <header class="card-header" style="position: sticky; top: 0; z-index: 1;">
+        <div class="property-title">
+        <h2 style="margin: 0;">-</h2>
+        </div>
+      </header>
+      <div class="card-body" style="overflow-y: auto; max-height: 80vh;">
+        <div class="field">
+        <label>Suburb</label>
+        <input type="text" value="" disabled>
+        </div>
+        <div class="field">
+        <label>State/City</label>
+        <span class="chip"></span>
+        </div>
+        <div class="field">
+        <label>Rating</label>
+        <div class="rating">
+          <span style="display:none">⭐</span>
+          <span style="display:none">⭐</span>
+          <span style="display:none">⭐</span>
+          <span style="display:none">⭐</span>
+          <span style="display:none">⭐</span>
+        </div>
+        </div>
+        <div class="field">
+        <label>Images</label>
+        <div class="attachments">No attachments</div>
+        </div>
+        <div class="field">
+        <label>Review</label>
+        <textarea readonly style="field-sizing: content;"></textarea>
+        </div>
+      </div>
       </div>
     </div>
-
-    <!-- CARD -->
-    <!-- <div class="container">
+  </div>
+  
+  <!-- CARD -->
+  <!-- <div class="container">
+    
+    <div class="card">
       
-      <div class="card">
+    </div>
+  </div> -->
+  
+</main>
 
-      </div>
-    </div> -->
-
-  </main>
-
-  <footer>
-    <p style="line-height: 1.6;">&copy; 2024 Bad Rentals <br>
+<footer>
+  <p style="line-height: 1.6;">&copy; 2024 Bad Rentals <br>
     Rental data provided by <a style="color: blue;" href="https://www.shitrentals.org">www.shitrentals.org</a><br>
   </footer>
 </body>
